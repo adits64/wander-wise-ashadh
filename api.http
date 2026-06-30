@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:3000
+
+### TEST API
+GET {{baseUrl}}
+
+###CREATE USER
+
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "name": "aditya",
+    "email": "adi@gmail.com",
+    "password": "12345678"
+}
