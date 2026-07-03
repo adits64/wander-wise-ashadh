@@ -6,8 +6,9 @@ const router = Router();
 router.get('/',(req , res)=>{
     res.json({message:'welcome to the wander wise API'});
 
+    
 });
 
 router.use('/users', USER_ROUTER);
 
-export default router;
+export default router; 
