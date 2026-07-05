@@ -10,11 +10,6 @@ const app = express();
 const PORT = process.env.PORT;
 connectDB();
 
-// const Greet= (req,res) =>  {
-//     res.send("hello world");
-// };
-
-// app.get("/",Greet);
 app.use(express.json());
 app.use('/', HANDLERS);
 app.use(errorMiddleware);
