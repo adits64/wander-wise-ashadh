@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3000
-@userId = 6a43afc8d6f79cf9c9a57be2
+@userId = 6a48f11fd32aa6bff78ed1f8
 ### TEST API
 GET {{baseUrl}}
 
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "name": "aditya",
-    "email": "adi1@gmail.com",
+    "email": "adi12@gmail.com",
     "password": "12345678"
 }
 
@@ -25,7 +25,7 @@ PATCH {{baseUrl}}/users/{{userId}}
 Content-Type: application/json
 
 {
-    "name": "aditya singh Updated"
+    "name": "aditya singh pqr"
 }
 
 ### delete user by Id

@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { create, find, index, remove, update } from "../services/user.js";
+import { createUserValidator } from "../validators/user.js";
 
 const router = Router();
 
-router.post('/', async(req, res, next) =>{
+router.post('/',createUserValidator, async(req, res, next) =>{
     try{
         const user = await create(req.body);
         res.status(201).json(user);
@@ -23,12 +24,12 @@ router.get('/', async (req, res, next) =>{
 })
 router.get('/:id', async (req, res, next) =>{
     try {
-        const users = await find({_id: req.params.id}, {password:0});
+        const users = await find({ _id: req.params.id }, { password: 0 });
         res.status(200).json(users);
     } catch (error) {
         next(error);
     }
-})
+});
 
 router.patch('/:id', async (req, res,next)=>{
     try {
@@ -36,7 +37,7 @@ router.patch('/:id', async (req, res,next)=>{
         res.status(200).json(user);
 
     } catch (error) {
-        next(error)
+        next(error);
     }
 })
 
