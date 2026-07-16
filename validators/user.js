@@ -63,3 +63,19 @@ export const updateUserValidator = [
         .withMessage("Password must be at least 6 characters long"),
     validate,
 ];
+
+export const loginValidator = [
+    body("email")
+    .notEmpty()
+    .withMessage("Email is Require")
+    .isEmail()
+    .withMessage("Invalid email format")
+    .trim()
+    .escape(),
+body("password")
+    .notEmpty()
+    .withMessage("password is required")
+    .isLength({min: 6})
+    .withMessage("password must be atleast 6 charecter"),
+    validate,
+]
